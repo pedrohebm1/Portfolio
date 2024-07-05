@@ -1,0 +1,23 @@
+#contact {
+    text-align: center;
+    width: 400px;
+    margin: 100px auto;
+}
+
+#contact-email {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact-email-clipboard button {
+    text-align: center;
+    background: none;
+    border: none;
+    outline: 0;
+}
+
+#contact-email-clipboard button img {
+    width: 30px;
+}
