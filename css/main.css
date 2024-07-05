@@ -13,6 +13,10 @@ html{scroll-behavior: smooth;}
     gap: 20px;
 }
 
+#social_links > a {
+    cursor: pointer;
+}
+
 #social_links a img {
     width: 50px;
 }
