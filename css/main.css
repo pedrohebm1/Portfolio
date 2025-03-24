@@ -22,70 +22,118 @@ html{scroll-behavior: smooth;}
 }
 
 #projects {
-    margin: 200px 0;
+    margin: 100px 0;
     text-align: center;
 }
 
 #projects h2 {
-    margin: 100px;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: #333;
 }
 
-#projects>.projects {
+/* Container de projetos */
+.projects {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
-    margin-top: 200px;
+    gap: 30px;
+    padding: 20px;
 }
 
-.project .project-image {
-    object-fit: fill;
-    width: 100%;
-    border-radius: 10px 10px 0 0;
-}
-
+/* Estilização do card do projeto */
 .project {
     position: relative;
+    width: 350px;
+    background: white;
     border-radius: 10px;
-    background-color: rgb(248, 249, 248);
-    width: 250px;
-    height: 350px;
-    top: 0px;
-    box-shadow: 0px 0px 13px 7px rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: 0px 0px 13px 7px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0px 0px 13px 7px rgba(0, 0, 0, 0.2);
-    transition: width .2s ease-in-out, height .2s ease-in-out, top .2s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    overflow: hidden;
 }
 
 .project:hover {
-    width: 270px;
-    height: 370px;
-    top: -10px;
-    transition: width .2s ease-in-out, height .2s ease-in-out, top .2s ease-in-out;
+    transform: translateY(-8px);
 }
 
+/* Imagem do projeto */
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Informações do projeto */
 .project-info {
-    padding: 0 20px;
+    padding: 15px;
+    text-align: center;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Tecnologias utilizadas */
+.project-info-technologies {
+    margin-top: 10px;
 }
 
 .project-info-technologies img {
-    display: inline-block;
-    width: 50px;
+    width: 40px;
+    margin: 5px;
 }
 
+/* Projeto em breve */
+.project-coming-soon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    width: 350px;
+    background: #f4f4f4;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #777;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 #notifications__copiedToClipboard {
     z-index: 3;
     position: fixed;
-    top: 70vh;
+    bottom: -100px; /* Inicialmente escondido abaixo da tela */
     left: 50%;
-    transform: translate(-50%, 0);
-    background-color: #23C552;
-    opacity: 0;
-    padding:15px;
+    transform: translateX(-50%);
+    background-color: white;
+    color: black;
+    padding: 15px;
     border-radius: 15px;
-    transition: opacity 1s;
-    color: white;
+    opacity: 0;
+    transition: bottom 0.5s, opacity 0.5s;
+    font-size: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombras para dar destaque */
 }
+
+#contact-email button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
 
 footer {
     position: absolute;

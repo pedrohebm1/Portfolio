@@ -39,15 +39,27 @@ function writeText(id, text, speed) {
 }
 
 function copyToClipBoard() {
-  navigator.clipboard.writeText("phs.oliveirasi@gmail.com");
-  if (copytoclipboardDebounce === true) {
-    copytoclipboardDebounce = false;
-    const notification = document.getElementById('notifications__copiedToClipboard');
-    notification.style.opacity = 1
-    setTimeout(() => notification.style.opacity = 0, 2000);
-    setTimeout(() => (copytoclipboardDebounce = true), 4000);
+    navigator.clipboard.writeText("phs.oliveirasi@gmail.com");
+
+    if (copytoclipboardDebounce === true) {
+        copytoclipboardDebounce = false;
+        
+        const notification = document.getElementById('notifications__copiedToClipboard');
+        
+        // Mostrar a notificação com animação de "subir"
+        notification.style.bottom = '20px'; 
+        notification.style.opacity = 1;
+        
+        // Depois de 2 segundos, esconder a notificação com animação de "descer"
+        setTimeout(() => {
+            notification.style.bottom = '-100px';
+            notification.style.opacity = 0;
+        }, 2000);
+
+        // Liberar o debounce após 4 segundos
+        setTimeout(() => (copytoclipboardDebounce = true), 4000);
+    }
   }
-}
 
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
